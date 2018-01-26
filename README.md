@@ -1,5 +1,7 @@
 # MostMoneyOts
 
+[![Gem Version](https://badge.fury.io/rb/most_ots.svg)](https://badge.fury.io/rb/most_ots)
+
 [Most Money](https://customer.mostmoney.mn/index.aspx?page=content/uctrademerchant#content~share)
 External Protocol
 
