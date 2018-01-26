@@ -1,5 +1,13 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.4.2
+- 2.4.2
 before_install: gem install bundler -v 1.16.0
+deploy:
+  provider: rubygems
+  api_key:
+    secure: DzYOkVxdwwmV+6lX17cAzWQBn75GkQsAndCHuck4xwZXOm2bcx1nMTDq1fcIu68SnRDLnj/tKOi6uzzjVDpcQ8eCgk9x6iMutJ4Ao6DSrXHYiBbWtVIwXEgUNyw87SCqPDuSnbrX+sn9ZFK+IUbJPdq2WbfRpWgc8dyhyMAQFogscVOrEegi9MYuy39/y1RsPYBq4axElfTsV9Q6Cib3Isz2u+u4vAVob3JMNK4j6oF7NJO1yqV/N2X00BkNFaiAeF2eHoY0/5aDWBKHFb+IGrh96uM+dYqXP6ytvHsNcFAPhEZcAwdJ/RWcv+Lbcjdym4abHNGEtAslSK2moDINcUmyLXgX/5TUXTk693n/wKpF6RIkY8tPfnoNiLbOPZ/rFWINzNP26BLsIdfC9sKoXWndcAiiHvZdLIo+19n+cIMpvOXDFUz/Wf9ea//QzkLxJpqeev9gQBv8Pm6gaq2F95U09LHex2nl0bCrgrdt2HK5YD56f9MVndnI1E+C8B3CgN1zdS5ZpttdWBQv2N9dQg6Uf7R0Bbi5WXgNpywiYSyvzYYuJLyfn7q3kqpdgmpFxMQy2e7OvLJoSFzCtEulp7YhfjDHHzpwRXKgBDsAKMDSiTP0DibCIT+CsCdFWrFj4gYchgmUed0r0Gl4AWGbHQsEXw2f8gzSPVZ1QfHs+2s=
+  gem: most_ots
+  on:
+    tags: true
+    repo: ssxenon01/most_ots
