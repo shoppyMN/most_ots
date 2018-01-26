@@ -1,6 +1,6 @@
 # MostMoneyOts
 
-[![Gem Version](https://badge.fury.io/rb/most_ots.svg)](https://badge.fury.io/rb/most_ots)
+[![Gem Version](https://badge.fury.io/rb/most_ots.svg)](https://badge.fury.io/rb/most_ots) [![Build Status](https://travis-ci.org/ssxenon01/most_ots.svg?branch=master)](https://travis-ci.org/ssxenon01/most_ots)
 
 [Most Money](https://customer.mostmoney.mn/index.aspx?page=content/uctrademerchant#content~share)
 External Protocol

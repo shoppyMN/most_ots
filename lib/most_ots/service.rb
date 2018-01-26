@@ -22,7 +22,7 @@ module MostOts
         srcInstId: options.fetch(:src_inst_id) { ENV['SRC_INST_ID'] }
       }
       @protocol_version = options.fetch(:protocol_version) { '05' }
-      @most_pem_location = options.fetch(:most_pem_location)
+      @most_cert_file = options.fetch(:most_cert_file)
       @api_host = options.fetch(:host) { 'http://202.131.242.165:9089' }
 
       @payee_id = options[:payee_id] if options.key?(:payee_id)
@@ -98,7 +98,7 @@ module MostOts
       cipher = OpenSSL::Cipher.new('AES-128-CBC')
       cipher.encrypt
       cipher.iv = @cipher_iv.pack('c*')
-      rsa = OpenSSL::PKey::RSA.new File.read @most_pem_location
+      rsa = OpenSSL::PKey::RSA.new @most_cert_file
       key = @cipher_key.nil? ? cipher.random_key : @cipher_key
       cipher.key = key
       {

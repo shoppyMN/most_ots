@@ -1,8 +1,7 @@
 RSpec.describe MostOts do
   MostOts.logger.level = Logger::DEBUG
-
   s = MostOts::Service.new(
-    most_pem_location: 'test/random.cert', # Random Public key just for test
+    most_cert_file: Base64.decode64(ENV['MOST_CERT']), # Random Public key just for test
     cipher_key: ENV['TEST_CIPHER_KEY'],
     cipher_iv: Base64.decode64(ENV['TEST_CIPHER_IV']).unpack('c*'),
     src_inst_id: ENV['SRC_INST_ID'],
@@ -26,19 +25,11 @@ RSpec.describe MostOts do
   it 'Check Purchase QR' do
     resp = s.purchase_qr(
       traceNo: '2017052405430504',
-      tranAmount: '1',
-      tranDesc: 'Test: QR Purchase'
+      billId: 'travis-ci',
+      tranAmount: 2,
+      tranDesc: 'Travis ci unit test'
     )
-    expect(resp['responseCode']).to(eq('0'))
-  end
-
-  it 'Check Transfer Qr' do
-    resp = s.transfer_qr(
-      traceNo: '2017052405430504',
-      tranAmount: '1',
-      tranDesc: 'Test QR Transfer'
-    )
-    expect(resp['responseCode']).to(eq('0'))
+    expect(resp['traceNo']).to(eq('2017052405430504'))
   end
 
   def decrypt(encrypted_data)
