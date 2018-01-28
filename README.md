@@ -1,6 +1,8 @@
 # MostMoneyOts
 
 [![Gem Version](https://badge.fury.io/rb/most_ots.svg)](https://badge.fury.io/rb/most_ots) [![Build Status](https://travis-ci.org/ssxenon01/most_ots.svg?branch=master)](https://travis-ci.org/ssxenon01/most_ots)
+[![Maintainability](https://api.codeclimate.com/v1/badges/afbec1dd7a17291317f5/maintainability)](https://codeclimate.com/github/ssxenon01/most_ots/maintainability)
+[![codebeat badge](https://codebeat.co/badges/d51c6f19-41bd-4778-9492-629a0601d40d)](https://codebeat.co/projects/github-com-ssxenon01-most_ots-master)
 
 [Most Money](https://customer.mostmoney.mn/index.aspx?page=content/uctrademerchant#content~share)
 External Protocol
