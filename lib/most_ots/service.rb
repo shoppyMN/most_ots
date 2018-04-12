@@ -48,7 +48,7 @@ module MostOts
       # Mandatory Fields
       mf = %i[srcInstId channel lang traceNo payeeId posNo tranAmount tranCur tranDesc]
       # Optional Fields 
-      of = %i[billId deviceIP deviceMac deviceName]
+      of = %i[billId deviceIP deviceMac deviceName qrPaidLimit]
       api_request('/api/mapi/TT3051', configure_params(params, mf, of))
     end
 
