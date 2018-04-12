@@ -46,9 +46,9 @@ module MostOts
     def purchase_qr(params)
       logger.debug('MostOts Service Purchase QR Called')
       # Mandatory Fields
-      mf = %i[srcInstId channel lang traceNo payeeId posNo tranAmount tranCur tranDesc]
+      mf = %i[srcInstId channel lang traceNo payeeId posNo tranAmount tranCur tranDesc qrPaidLimit]
       # Optional Fields 
-      of = %i[billId deviceIP deviceMac deviceName qrPaidLimit]
+      of = %i[billId deviceIP deviceMac deviceName]
       api_request('/api/mapi/TT3051', configure_params(params, mf, of))
     end
 
