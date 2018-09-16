@@ -27,6 +27,7 @@ RSpec.describe MostOts do
       traceNo: '2017052405430504',
       billId: 'travis-ci',
       tranAmount: 2,
+      qrPaidLimit: 1,
       tranDesc: 'Travis ci unit test'
     )
     expect(resp['traceNo']).to(eq('2017052405430504'))
