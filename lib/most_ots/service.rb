@@ -87,6 +87,17 @@ module MostOts
 
     # @param [Hash] params
     # @return [JSON] response
+    def check_qr_payment_batch(params)
+      logger.debug('MostOts Service Check QR Payment Called')
+      # Mandatory Fields
+      mf = %i[srcInstId channel lang traceNo qrCode payeeId posNo isCheckQr]
+      # Optional Fields
+      of = %i[deviceIP deviceMac deviceName]
+      api_request('/api/mapi/TT3066', configure_params(params, mf, of))
+    end
+
+    # @param [Hash] params
+    # @return [JSON] response
     def purchase_tan(params)
       logger.debug('MostOts Service Purchase Tan Called')
       # Mandatory Fields

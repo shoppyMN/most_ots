@@ -5,7 +5,7 @@ RSpec.describe MostOts do
     cipher_key: ENV['TEST_CIPHER_KEY'],
     cipher_iv: Base64.decode64(ENV['TEST_CIPHER_IV']).unpack('c*'),
     src_inst_id: ENV['SRC_INST_ID'],
-    channel: '20',
+    channel: '44',
     lang: '0',
     tran_cur: 'MNT',
     pos_no: '1234',
@@ -22,6 +22,28 @@ RSpec.describe MostOts do
     expect(sample_data).to(eq(decrypt(encrypted_data)))
   end
 
+  it 'check_qr_payment_batch' do
+    resp = s.check_qr_payment_batch(
+      traceNo: '2018102405430504',
+      qrCode: '77296678494442018102410292542516019000000000006765',
+      isCheckQr: 2,
+      channel: 44
+    )
+    expect(resp['responseCode']).to(eq('0'))
+  end
+
+  it 'Check Purchase TAN' do
+    resp = s.purchase_tan(
+      traceNo: '2017052405430504',
+      billId: '123456789',
+      srcMsisdn: '99199999',
+      tan: '999999',
+      tranAmount: 2,
+      qrPaidLimit: 1,
+      tranDesc: 'Travis ci unit test'
+    )
+    expect(resp['traceNo']).to(eq('2017052405430504'))
+  end
   it 'Check Purchase QR' do
     resp = s.purchase_qr(
       traceNo: '2017052405430504',
@@ -30,6 +52,7 @@ RSpec.describe MostOts do
       qrPaidLimit: 1,
       tranDesc: 'Travis ci unit test'
     )
+    puts resp
     expect(resp['traceNo']).to(eq('2017052405430504'))
   end
 
